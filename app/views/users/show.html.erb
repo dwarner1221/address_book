@@ -1,10 +1,10 @@
-<h1><%= @user.f_name %> " " <%= @user.l_name %></h1>
+
+<h1><%= @user.f_name %> <%= @user.l_name %></h1>
 <br>
 <h2>Contacts</h2>
-<br>
-<%= link_to "Add Contact", new_contact_path %>
+<%= link_to "Add Contact", new_user_contact_path(user_id: @user.id) %>
 <br>
 
-<%= @contacts.each do |contact| %>
-  <%= contact.f_name %>" "<%= contact.l_name %><br>
-  <% end %>
+<% @contacts.each do |contact| %>
+  <%= contact.f_name %> <%= contact.l_name %><br>
+<% end %>

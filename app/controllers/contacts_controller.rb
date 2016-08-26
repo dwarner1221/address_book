@@ -5,14 +5,16 @@ class ContactsController < ApplicationController
   end
 
   def new
-    @contact = current_user.contacts.build
+    @user = User.find(params[:user_id])
+    @contact = @user.contacts.new
   end
   
   def create
-    @contact = current_user.contacts.build(contact_params)
+    @user = User.find(params[:user_id])
+    @contact = @user.contacts.create(contact_params)
     
     if @contact.save
-      redirect_to 'contacts#index'
+      redirect_to user_path @user
     else
       render 'new'
     end
