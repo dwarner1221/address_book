@@ -1,0 +1,14 @@
+<%= form_for @contact do |f| %>
+  First Name: <%= f.text_field :f_name %><br>
+  Last Name: <%= f.text_field :l_name %><br>
+  Email: <%= f.text_field :email %><br>
+  Home Number: <%= f.text_field :home_number %><br>
+  Mobile Number: <%= f.text_field :mobile_number %><br>
+  Work Number: <%= f.text_field :work_number %><br>
+  Street: <%= f.text_field :street %><br>
+  City: <%= f.text_field :city %><br>
+  State: <%= f.text_field :state %><br>
+  Postal Code:<%= f.text_field :zip %><br><br>
+  <%= f.submit %>
+
+<% end %>
