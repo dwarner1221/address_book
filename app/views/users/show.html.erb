@@ -1,10 +1,17 @@
 
 <h1><%= @user.f_name %> <%= @user.l_name %></h1>
-<br>
-<h2>Contacts</h2>
-<%= link_to "Add Contact", new_user_contact_path(user_id: @user.id) %>
-<br>
 
+<table>
+<tr>
+  <th colspan = 2>
+  Contacts <%= link_to "Add Contact", new_user_contact_path(user_id: @user.id) %>
+  </th>
+</tr>
 <% @contacts.each do |contact| %>
-  <%= contact.f_name %> <%= contact.l_name %><br>
+<tr>
+  <td><%= contact.f_name %></td>
+  <td><%= contact.l_name %></td>
+  <td><%= link_to "View", 'contacts#show' %></td>
+</tr>
 <% end %>
+</tablle>

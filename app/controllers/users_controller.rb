@@ -24,6 +24,18 @@ class UsersController < ApplicationController
     @contacts = @user.contacts
   end
   
+  def edit
+  end
+  
+  def update
+  end
+  
+  def destroy
+    @user = User.find(params[:id]).destroy
+    flash[:success] = "User deleted"
+    render :index
+  end
+  
   private
   
   def user_params
